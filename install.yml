@@ -1,0 +1,8 @@
+---
+- hosts: k8s
+  user: root
+  tasks:
+  - name: remove apche
+    package: name=apache2 state=absent
+  - name: install apache2
+    package: name=apache2 state=present
