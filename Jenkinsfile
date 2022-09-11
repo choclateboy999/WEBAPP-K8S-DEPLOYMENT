@@ -20,7 +20,13 @@ agent any
             }
             stage("PUBLISH ARTIFACT TO NEXUS"){
                 steps{
-                    nexusArtifactUploader artifacts: [[artifactId: 'webapp', classifier: '', file: 'webapp/target/webapp.war', type: 'war']], credentialsId: 'ecff27e7-6e43-44c0-95dd-4b3252cdcdf3', groupId: 'com.example.maven-project', nexusUrl: '13.235.50.151:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'webapp-snapshot', version: '1.0-SNAPSHOT'
+                    nexusArtifactUploader artifacts: [[artifactId: 'webapp',
+                    classifier: '', file: 'webapp/target/webapp.war', type: 'war']],
+                    credentialsId: 'ecff27e7-6e43-44c0-95dd-4b3252cdcdf3',
+                    groupId: 'com.example.maven-project',
+                    nexusUrl: '13.234.117.25:8081',
+                    nexusVersion: 'nexus3', protocol: 'http',
+                    repository: 'webapp-snapshot', version: '1.0-SNAPSHOT'
                 }
             }
             stage("BUILD DOCKER IMAGE"){
