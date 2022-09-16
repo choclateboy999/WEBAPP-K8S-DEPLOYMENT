@@ -3,10 +3,10 @@
   user: root
   tasks:
   - name: apply webapp.yml
-    command: kubectl apply -f /home/webapp.yml
+    command: kubectl apply -f /home/ubuntu/webapp.yml
     args:
      chdir: /home/ubuntu
   - name: apply webapp.yml
-    command: kubectl apply -f /home/service.yml
+    command: kubectl apply -f /home/ubuntu/service.yml
     args:
       chdir: /home/ubuntu
