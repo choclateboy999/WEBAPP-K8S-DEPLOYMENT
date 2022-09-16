@@ -1,0 +1,12 @@
+---
+- hosts: k8s
+  user: root
+  tasks:
+  - name: apply webapp.yml
+    command: kubectl apply -f /home/webapp.yml
+    args:
+     chdir: /home/ubuntu
+  - name: apply webapp.yml
+    command: kubectl apply -f /home/service.yml
+    args:
+      chdir: /home/ubuntu
